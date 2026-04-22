@@ -2,1186 +2,1191 @@
 
 <html lang="pt-BR">
 <head>
-			<meta charset="UTF-8">
-			<title>Formulários</title>
+	<meta charset="UTF-8">
+	<title>Formulários</title>
+	
+	<style>
+		
+		body {
+			font-family: Arial;
+			margin: 0;
+			background: #f5f5f5;
+		}
+		
+		/* NAVBAR */
+		
+		.navbar {
+			background: #2c3e50;
+			padding: 12px;
+			display: flex;
+			gap: 10px;
+		}
+		
+		.navbar button {
+			background: #34495e;
+			color: white;
+			border: none;
+			padding: 10px 15px;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+		
+		.navbar button:hover {
+			background: #1abc9c;
+		}
+		
+		/* PAGINAS */
+		
+		.page {
+			display: none;
+		}
+		
+		.page.active {
+			display: block;
+		}
+		
+		/* impressão */
+		
+		@media print {
 			
-			<style>
-						
-						body {
-									font-family: Arial;
-									margin: 0;
-									background: #f5f5f5;
-						}
-						
-						/* NAVBAR */
-						
-						.navbar {
-									background: #2c3e50;
-									padding: 12px;
-									display: flex;
-									gap: 10px;
-						}
-						
-						.navbar button {
-									background: #34495e;
-									color: white;
-									border: none;
-									padding: 10px 15px;
-									cursor: pointer;
-									border-radius: 4px;
-						}
-						
-						.navbar button:hover {
-									background: #1abc9c;
-						}
-						
-						/* PAGINAS */
-						
-						.page {
-									display: none;
-						}
-						
-						.page.active {
-									display: block;
-						}
-						
-						/* impressão */
-						
-						@media print {
-									
-									.navbar {
-												display: none !important;
-									}
-									
-									.page {
-												display: block;
-									}
-									
-						}
-						
-						/* ====== CSS FORM 1 ====== */
-						
-						body {
-									font-family: Arial;
-									background: #f5f5f5
-						}
-						
-						.container {
-									
-									max-width: 1000px;
-									margin: 0 auto;
-									background: white;
-									padding: 35px 40px;
-									box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-									
-									
-						}
-						
-						h2 {
-									margin-top: 0
-						}
-						
-						.info {
-									display: grid;
-									grid-template-columns: 1fr 1fr 1fr;
-									gap: 12px;
-									margin-bottom: 20px
-						}
-						
-						input {
-									border: none;
-									border-bottom: 1px solid #444;
-									width: 100%
-						}
-						
-						table {
-									width: 100%;
-									border-collapse: collapse
-						}
-						
-						th, td {
-									border: 1px solid #ccc;
-									padding: 6px;
-									font-size: 13px
-						}
-						
-						th {
-									background: #eaeaea
-						}
-						
-						.section {
-									background: #dcdcdc;
-									font-weight: bold
-						}
-						
-						button {
-									padding: 10px 15px;
-									margin-right: 8px;
-									border: none;
-									border-radius: 5px;
-									cursor: pointer
-						}
-						
-						.calc {
-									background: #2e7d32;
-									color: white
-						}
-						
-						.export {
-									background: #ff8f00;
-									color: white
-						}
-						
-						.print {
-									background: #1565c0;
-									color: white
-						}
-						
-						.result {
-									margin-top: 20px;
-									font-weight: bold;
-									font-size: 18px
-						}
-						
-						textarea {
-									width: 100%;
-									height: 90px;
-									margin-top: 15px
-						}
-						
-						canvas {
-									max-width: 250px;
-									max-height: 250px;
-									border: none;
-						}
-						
-						/* ========== ESTILOS ESPECÍFICOS PARA IMPRESSÃO ========== */
-						@media print {
-									.container {
-												box-shadow: none !important; /* Remove a sombra completamente na impressão */
-												padding: 10px;
-												margin: 0;
-												background: white;
-												border-radius: 0;
-									}
-									
-									/* Gráfico: torna borda mais leve e evita quebras estranhas */
-									canvas {
-												max-width: 250px;
-												max-height: 250px;
-												border: none;
-												page-break-inside: avoid;
-									}
-									
-									/* Remove botões e elementos interativos desnecessários no papel */
-									button, .calc, .export, .print {
-												display: none !important;
-									}
-									
-									/* Ocultar controles de rádio? Não recomendado, pois o conteúdo deve refletir a auditoria.
-														Mas se quiser manter o estado marcado impresso, os círculos são visíveis.
-														Mantemos legível. */
-									input[type="radio"] {
-												opacity: 1;
-												transform: scale(0.9);
-									}
-									
-									/* Informações adicionais */
-									.info input {
-												border-bottom: 1px solid #000;
-									}
-									
-									textarea {
-												border: none;
-												page-break-inside: avoid;
-									}
-									
-						}
-						
-						
-						/* ====== CSS FORM 2 ====== */
-						* {
-									margin: 0;
-									padding: 0;
-									box-sizing: border-box;
-						}
-						
-						body {
-									font-family: 'Segoe UI', 'Arial', sans-serif;
-									background: #e9ecef;
-									color: #212529;
-									line-height: 1.5;
-						}
-						
-						.container2 {
-									max-width: 1000px;
-									margin: 0 auto;
-									background: white;
-									padding: 35px 40px;
-									box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-						}
-						
-						h1 {
-									font-size: 20px;
-									text-align: center;
-									margin-bottom: 8px;
-									font-weight: bold;
-									color: #2c3e50;
-						}
-						
-						h2 {
-									font-size: 17px;
-									text-align: center;
-									margin-bottom: 5px;
-									font-weight: 600;
-									color: #34495e;
-						}
-						
-						h3 {
-									font-size: 16px;
-									text-align: left;
-									margin: 25px 0 15px 0;
-									font-weight: bold;
-									color: #2c3e50;
-									border-bottom: 2px solid #2c3e50;
-									padding-bottom: 5px;
-						}
-						
-						p {
-									text-align: justify;
-									margin-bottom: 15px;
-									font-size: 14px;
-									color: #333;
-						}
-						
-						.campo {
-									margin: 12px 0;
-									display: flex;
-									align-items: baseline;
-									flex-wrap: wrap;
-									font-size: 14px;
-									padding: 5px 0;
-						}
-						
-						.campo strong {
-									min-width: 240px;
-									font-weight: 600;
-									color: #2c3e50;
-						}
-						
-						.linha {
-									display: inline-block;
-									border-bottom: 1px solid #adb5bd;
-									min-width: 280px;
-									height: 24px;
-									margin-left: 10px;
-									flex: 1;
-									cursor: text;
-									background: #f8f9fa;
-									padding: 2px 5px;
-						}
-						
-						.linha:focus {
-									outline: none;
-									border-bottom: 2px solid #2c3e50;
-									background: #fff;
-						}
-						
-						.bloco {
-									margin-top: 20px;
-						}
-						
-						.pergunta {
-									margin: 20px 0;
-						}
-						
-						.pergunta strong {
-									font-weight: 600;
-									font-size: 14px;
-									display: block;
-									margin-bottom: 8px;
-									color: #2c3e50;
-						}
-						
-						.resposta {
-									border: 1px solid #ced4da;
-									border-radius: 4px;
-									min-height: 70px;
-									margin-top: 5px;
-									padding: 10px;
-									background: #f8f9fa;
-									cursor: text;
-									transition: all 0.2s;
-						}
-						
-						.resposta:focus {
-									outline: none;
-									border-color: #2c3e50;
-									background: #fff;
-									box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
-						}
-						
-						.instrucoes {
-									border: 1px solid #dee2e6;
-									padding: 15px;
-									margin: 20px 0;
-									background: #f8f9fa;
-									font-size: 13px;
-									border-left: 3px solid #2c3e50;
-						}
-						
-						.instrucoes strong {
-									font-weight: 600;
-									color: #2c3e50;
-						}
-						
-						.assinatura {
-									margin-top: 40px;
-									padding-top: 20px;
-									border-top: 1px solid #dee2e6;
-									display: flex;
-									justify-content: space-between;
-									flex-wrap: wrap;
-									gap: 30px;
-						}
-						
-						.assinatura-item {
-									flex: 1;
-									text-align: center;
-									font-size: 13px;
-						}
-						
-						.assinatura-linha {
-									border-bottom: 1px solid #adb5bd;
-									margin-top: 35px;
-									padding-top: 5px;
-									min-height: 30px;
-									background: #f8f9fa;
-						}
-						
-						.observacao {
-									font-size: 12px;
-									font-style: italic;
-									margin-top: 8px;
-									color: #6c757d;
-						}
-						
-						/* Placeholder styling */
-						[contenteditable="true"]:empty:before {
-									content: attr(data-placeholder);
-									color: #adb5bd;
-									font-style: italic;
-						}
-						
-						@media print {
-									body {
-												background: white;
-												padding: 10px;
-												
-									}
-									
-									.container {
-												padding: 30px 25px;
-												margin: 10px;
-												box-shadow: none;
-									}
-									
-									.resposta {
-												border: none !important;
-												border-bottom: 1px solid #000 !important;
-												border-radius: 0 !important;
-												background: none !important;
-												min-height: 50px;
-												padding: 5px 0;
-									}
-									
-									.linha {
-												border-bottom: 1px solid #000 !important;
-												background: none !important;
-												min-width: 200px;
-									}
-									
-									.instrucoes {
-												background: #f5f5f5 !important;
-												border: 1px solid #000 !important;
-									}
-									
-									.assinatura-linha {
-												border-bottom: 1px solid #000 !important;
-												background: none !important;
-									}
-									
-									.pergunta {
-												page-break-inside: avoid;
-									}
-									
-									h3 {
-												border-bottom: 1px solid #000 !important;
-									}
-						}
-						
-						@media (max-width: 768px) {
-									.container {
-												padding: 25px;
-									}
-									
-									.campo {
-												flex-direction: column;
-									}
-									
-									.campo strong {
-												margin-bottom: 5px;
-									}
-									
-									.linha {
-												margin-left: 0;
-												width: 100%;
-									}
-									
-									h1 {
-												font-size: 18px;
-									}
-									
-									h2 {
-												font-size: 15px;
-									}
-						}
+			.navbar {
+				display: none !important;
+			}
 			
-			</style>
+			.page {
+				display: block;
+			}
 			
-			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+		}
+		
+		/* ====== CSS FORM 1 ====== */
+		
+		body {
+			font-family: Arial;
+			background: #f5f5f5
+		}
+		
+		.container {
+			
+			max-width: 1000px;
+			margin: 0 auto;
+			background: white;
+			padding: 35px 40px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			
+			
+		}
+		
+		h2 {
+			margin-top: 0
+		}
+		
+		.info {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 12px;
+			margin-bottom: 20px
+		}
+		
+		input {
+			border: none;
+			border-bottom: 1px solid #444;
+			width: 100%
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse
+		}
+		
+		th, td {
+			border: 1px solid #ccc;
+			padding: 6px;
+			font-size: 13px
+		}
+		
+		th {
+			background: #eaeaea
+		}
+		
+		.section {
+			background: #dcdcdc;
+			font-weight: bold
+		}
+		
+		button {
+			padding: 10px 15px;
+			margin-right: 8px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer
+		}
+		
+		.calc {
+			background: #2e7d32;
+			color: white
+		}
+		
+		.export {
+			background: #ff8f00;
+			color: white
+		}
+		
+		.print {
+			background: #1565c0;
+			color: white
+		}
+		
+		.result {
+			margin-top: 20px;
+			font-weight: bold;
+			font-size: 18px
+		}
+		
+		textarea {
+			width: 100%;
+			height: 90px;
+			margin-top: 15px
+		}
+		
+		canvas {
+			max-width: 250px;
+			max-height: 250px;
+			border: none;
+		}
+		
+		/* ========== ESTILOS ESPECÍFICOS PARA IMPRESSÃO ========== */
+		@media print {
+			#form2 {
+				page-break-before: always;
+			}
+		
+			.container, .container2 {
+				box-shadow: none !important; /* Remove a sombra completamente na impressão */
+				padding: 10px;
+				margin: 0;
+				background: white;
+				border-radius: 0;
+			}
+			
+			/* Gráfico: torna borda mais leve e evita quebras estranhas */
+			canvas {
+				max-width: 250px;
+				max-height: 250px;
+				border: none;
+				page-break-inside: avoid;
+			}
+			
+			/* Remove botões e elementos interativos desnecessários no papel */
+			button, .calc, .export, .print {
+				display: none !important;
+			}
+			
+			/* Ocultar controles de rádio? Não recomendado, pois o conteúdo deve refletir a auditoria.
+			Mas se quiser manter o estado marcado impresso, os círculos são visíveis.
+			Mantemos legível. */
+			input[type="radio"] {
+				opacity: 1;
+				transform: scale(0.9);
+			}
+			
+			/* Informações adicionais */
+			.info input {
+				border-bottom: 1px solid #000;
+			}
+			
+			textarea {
+				border: none;
+				page-break-inside: avoid;
+			}
+			
+		}
+		
+		
+		/* ====== CSS FORM 2 ====== */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Segoe UI', 'Arial', sans-serif;
+			background: #e9ecef;
+			color: #212529;
+			line-height: 1.5;
+		}
+		
+		.container2 {
+			max-width: 1000px;
+			margin: 0 auto;
+			background: white;
+			padding: 35px 40px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		h1 {
+			font-size: 20px;
+			text-align: center;
+			margin-bottom: 8px;
+			font-weight: bold;
+			color: #2c3e50;
+		}
+		
+		h2 {
+			font-size: 17px;
+			text-align: center;
+			margin-bottom: 5px;
+			font-weight: 600;
+			color: #34495e;
+		}
+		
+		h3 {
+			font-size: 16px;
+			text-align: left;
+			margin: 25px 0 15px 0;
+			font-weight: bold;
+			color: #2c3e50;
+			border-bottom: 2px solid #2c3e50;
+			padding-bottom: 5px;
+		}
+		
+		p {
+			text-align: justify;
+			margin-bottom: 15px;
+			font-size: 14px;
+			color: #333;
+		}
+		
+		.campo {
+			margin: 12px 0;
+			display: flex;
+			align-items: baseline;
+			flex-wrap: wrap;
+			font-size: 14px;
+			padding: 5px 0;
+		}
+		
+		.campo strong {
+			min-width: 240px;
+			font-weight: 600;
+			color: #2c3e50;
+		}
+		
+		.linha {
+			display: inline-block;
+			border-bottom: 1px solid #adb5bd;
+			min-width: 280px;
+			height: 24px;
+			margin-left: 10px;
+			flex: 1;
+			cursor: text;
+			background: #f8f9fa;
+			padding: 2px 5px;
+		}
+		
+		.linha:focus {
+			outline: none;
+			border-bottom: 2px solid #2c3e50;
+			background: #fff;
+		}
+		
+		.bloco {
+			margin-top: 20px;
+		}
+		
+		.pergunta {
+			margin: 20px 0;
+		}
+		
+		.pergunta strong {
+			font-weight: 600;
+			font-size: 14px;
+			display: block;
+			margin-bottom: 8px;
+			color: #2c3e50;
+		}
+		
+		.resposta {
+			border: 1px solid #ced4da;
+			border-radius: 4px;
+			min-height: 70px;
+			margin-top: 5px;
+			padding: 10px;
+			background: #f8f9fa;
+			cursor: text;
+			transition: all 0.2s;
+		}
+		
+		.resposta:focus {
+			outline: none;
+			border-color: #2c3e50;
+			background: #fff;
+			box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
+		}
+		
+		.instrucoes {
+			border: 1px solid #dee2e6;
+			padding: 15px;
+			margin: 20px 0;
+			background: #f8f9fa;
+			font-size: 13px;
+			border-left: 3px solid #2c3e50;
+		}
+		
+		.instrucoes strong {
+			font-weight: 600;
+			color: #2c3e50;
+		}
+		
+		.assinatura {
+			margin-top: 40px;
+			padding-top: 20px;
+			border-top: 1px solid #dee2e6;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 30px;
+		}
+		
+		.assinatura-item {
+			flex: 1;
+			text-align: center;
+			font-size: 13px;
+		}
+		
+		.assinatura-linha {
+			border-bottom: 1px solid #adb5bd;
+			margin-top: 35px;
+			padding-top: 5px;
+			min-height: 30px;
+			background: #f8f9fa;
+		}
+		
+		.observacao {
+			font-size: 12px;
+			font-style: italic;
+			margin-top: 8px;
+			color: #6c757d;
+		}
+		
+		/* Placeholder styling */
+		[contenteditable="true"]:empty:before {
+			content: attr(data-placeholder);
+			color: #adb5bd;
+			font-style: italic;
+		}
+		
+		@media print {
+			body {
+				background: white;
+				padding: 10px;
+				
+			}
+			
+			.container {
+				padding: 30px 25px;
+				margin: 10px;
+				box-shadow: none;
+			}
+			
+			.resposta {
+				border: none !important;
+				border-bottom: 1px solid #000 !important;
+				border-radius: 0 !important;
+				background: none !important;
+				min-height: 50px;
+				padding: 5px 0;
+			}
+			
+			.linha {
+				border-bottom: 1px solid #000 !important;
+				background: none !important;
+				min-width: 200px;
+			}
+			
+			.instrucoes {
+				background: #f5f5f5 !important;
+				border: 1px solid #000 !important;
+			}
+			
+			.assinatura-linha {
+				border-bottom: 1px solid #000 !important;
+				background: none !important;
+			}
+			
+			.pergunta {
+				page-break-inside: avoid;
+			}
+			
+			h3 {
+				border-bottom: 1px solid #000 !important;
+			}
+		}
+		
+		@media (max-width: 768px) {
+			.container {
+				padding: 25px;
+			}
+			
+			.campo {
+				flex-direction: column;
+			}
+			
+			.campo strong {
+				margin-bottom: 5px;
+			}
+			
+			.linha {
+				margin-left: 0;
+				width: 100%;
+			}
+			
+			h1 {
+				font-size: 18px;
+			}
+			
+			h2 {
+				font-size: 15px;
+			}
+		}
+		
+	</style>
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	
 </head>
 
 <body>
-
-<div class="navbar">
-			<button onclick="mostrar('form1')">Checklist Auditoria</button>
-			<button onclick="mostrar('form2')">Roteiro Entrevista</button>
-</div>
-
-<!-- ================= FORM 1 ================= -->
-
-<div id="form1" class="page active">
-
+	
+	<div class="navbar">
+		<button onclick="mostrar('form1')">Checklist Auditoria</button>
+		<button onclick="mostrar('form2')">Roteiro Entrevista</button>
+	</div>
+	
+	<!-- ================= FORM 1 ================= -->
+	
+	<div id="form1" class="page active">
+		
+		
+		
+		<div class="container">
+			<!--<iframe name="destinoOculto" style="display:none;"></iframe>-->
+			<!--<form id="formEnvio" method="POST" target="destinoOculto" style="display:none;">-->
+				<h2>Auditoria de Adesão aos Protocolos Operacionais Padrão</h2>
+				
+				<p>Instrumento baseado em recomendações da ANVISA, diretrizes da SOBECC e protocolos de segurança cirúrgica para avaliação da adesão às boas
+					práticas em procedimentos oftalmológicos.</p>
+					
+					<div class="info">
+						<div>Data <input id="data" type="date"></div>
+						<div>Setor <input id="setor"></div>
+						<div>Procedimento <input id="procedimento"></div>
+						<div>Profissional observado <input id="profissional"></div>
+						<div>Avaliador <input id="avaliador"></div>
+						<div>Horário <input id="horario" type="time"></div>
+					</div>
+					
+					<table id="checklist">
+						
+						<tr>
+							<th>Nº</th>
+							<th>Item auditado</th>
+							<th>Domínio</th>
+							<th>Conforme(C)</th>
+							<th>Não Conforme(N/C)</th>
+							<th>não observado(N/O)</th>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">1. Higiene das mãos e antissepsia</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Higienização das mãos antes do contato com o paciente</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q1" value="sim"></td>
+							<td><input type="radio" name="q1" value="nao"></td>
+							<td><input type="radio" name="q1" value="na"></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Antissepsia cirúrgica realizada corretamente</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q2" value="sim"></td>
+							<td><input type="radio" name="q2" value="nao"></td>
+							<td><input type="radio" name="q2" value="na"></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Tempo adequado de fricção</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q3" value="sim"></td>
+							<td><input type="radio" name="q3" value="nao"></td>
+							<td><input type="radio" name="q3" value="na"></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Uso de solução antisséptica apropriada</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q4" value="sim"></td>
+							<td><input type="radio" name="q4" value="nao"></td>
+							<td><input type="radio" name="q4" value="na"></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>Antissepsia do campo operatório</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q5" value="sim"></td>
+							<td><input type="radio" name="q5" value="nao"></td>
+							<td><input type="radio" name="q5" value="na"></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>Manutenção da assepsia durante o procedimento</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q6" value="sim"></td>
+							<td><input type="radio" name="q6" value="nao"></td>
+							<td><input type="radio" name="q6" value="na"></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>Higienização das mãos após o procedimento</td>
+							<td>Antissepsia</td>
+							<td><input type="radio" name="q7" value="sim"></td>
+							<td><input type="radio" name="q7" value="nao"></td>
+							<td><input type="radio" name="q7" value="na"></td>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">2. Paramentação</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>Uso de gorro</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q8" value="sim"></td>
+							<td><input type="radio" name="q8" value="nao"></td>
+							<td><input type="radio" name="q8" value="na"></td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>Uso de máscara</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q9" value="sim"></td>
+							<td><input type="radio" name="q9" value="nao"></td>
+							<td><input type="radio" name="q9" value="na"></td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>Uso de avental estéril</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q10" value="sim"></td>
+							<td><input type="radio" name="q10" value="nao"></td>
+							<td><input type="radio" name="q10" value="na"></td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>Uso de luvas estéreis</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q11" value="sim"></td>
+							<td><input type="radio" name="q11" value="nao"></td>
+							<td><input type="radio" name="q11" value="na"></td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>Sequência correta de paramentação</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q12" value="sim"></td>
+							<td><input type="radio" name="q12" value="nao"></td>
+							<td><input type="radio" name="q12" value="na"></td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>Retirada segura de EPIs</td>
+							<td>Paramentação</td>
+							<td><input type="radio" name="q13" value="sim"></td>
+							<td><input type="radio" name="q13" value="nao"></td>
+							<td><input type="radio" name="q13" value="na"></td>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">3. Campos e assepsia do campo operatório</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td>Campos estéreis utilizados</td>
+							<td>Campos</td>
+							<td><input type="radio" name="q14" value="sim"></td>
+							<td><input type="radio" name="q14" value="nao"></td>
+							<td><input type="radio" name="q14" value="na"></td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td>Aplicação correta dos campos</td>
+							<td>Campos</td>
+							<td><input type="radio" name="q15" value="sim"></td>
+							<td><input type="radio" name="q15" value="nao"></td>
+							<td><input type="radio" name="q15" value="na"></td>
+						</tr>
+						<tr>
+							<td>16</td>
+							<td>Manutenção do campo estéril</td>
+							<td>Campos</td>
+							<td><input type="radio" name="q16" value="sim"></td>
+							<td><input type="radio" name="q16" value="nao"></td>
+							<td><input type="radio" name="q16" value="na"></td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<td>Substituição de campo contaminado</td>
+							<td>Campos</td>
+							<td><input type="radio" name="q17" value="sim"></td>
+							<td><input type="radio" name="q17" value="nao"></td>
+							<td><input type="radio" name="q17" value="na"></td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<td>Organização da mesa cirúrgica</td>
+							<td>Campos</td>
+							<td><input type="radio" name="q18" value="sim"></td>
+							<td><input type="radio" name="q18" value="nao"></td>
+							<td><input type="radio" name="q18" value="na"></td>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">4. Controle de instrumentais</td>
+						</tr>
+						<tr>
+							<td>19</td>
+							<td>Instrumentais esterilizados</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q19" value="sim"></td>
+							<td><input type="radio" name="q19" value="nao"></td>
+							<td><input type="radio" name="q19" value="na"></td>
+						</tr>
+						<tr>
+							<td>20</td>
+							<td>Integridade da embalagem estéril</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q20" value="sim"></td>
+							<td><input type="radio" name="q20" value="nao"></td>
+							<td><input type="radio" name="q20" value="na"></td>
+						</tr>
+						<tr>
+							<td>21</td>
+							<td>Verificação de indicadores de esterilização</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q21" value="sim"></td>
+							<td><input type="radio" name="q21" value="nao"></td>
+							<td><input type="radio" name="q21" value="na"></td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td>Manuseio asséptico</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q22" value="sim"></td>
+							<td><input type="radio" name="q22" value="nao"></td>
+							<td><input type="radio" name="q22" value="na"></td>
+						</tr>
+						<tr>
+							<td>23</td>
+							<td>Controle de contaminação cruzada</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q23" value="sim"></td>
+							<td><input type="radio" name="q23" value="nao"></td>
+							<td><input type="radio" name="q23" value="na"></td>
+						</tr>
+						<tr>
+							<td>24</td>
+							<td>Descarte adequado de perfurocortantes</td>
+							<td>Instrumentais</td>
+							<td><input type="radio" name="q24" value="sim"></td>
+							<td><input type="radio" name="q24" value="nao"></td>
+							<td><input type="radio" name="q24" value="na"></td>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">5. Preparo e manipulação de soluções</td>
+						</tr>
+						<tr>
+							<td>25</td>
+							<td>Preparo em condições assépticas</td>
+							<td>Soluções</td>
+							<td><input type="radio" name="q25" value="sim"></td>
+							<td><input type="radio" name="q25" value="nao"></td>
+							<td><input type="radio" name="q25" value="na"></td>
+						</tr>
+						<tr>
+							<td>26</td>
+							<td>Soluções identificadas corretamente</td>
+							<td>Soluções</td>
+							<td><input type="radio" name="q26" value="sim"></td>
+							<td><input type="radio" name="q26" value="nao"></td>
+							<td><input type="radio" name="q26" value="na"></td>
+						</tr>
+						<tr>
+							<td>27</td>
+							<td>Verificação de validade</td>
+							<td>Soluções</td>
+							<td><input type="radio" name="q27" value="sim"></td>
+							<td><input type="radio" name="q27" value="nao"></td>
+							<td><input type="radio" name="q27" value="na"></td>
+						</tr>
+						<tr>
+							<td>28</td>
+							<td>Técnica asséptica na manipulação</td>
+							<td>Soluções</td>
+							<td><input type="radio" name="q28" value="sim"></td>
+							<td><input type="radio" name="q28" value="nao"></td>
+							<td><input type="radio" name="q28" value="na"></td>
+						</tr>
+						
+						<tr class="section">
+							<td colspan="6">6. Segurança do paciente e organização do ambiente</td>
+						</tr>
+						<tr>
+							<td>29</td>
+							<td>Identificação correta do paciente</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q29" value="sim"></td>
+							<td><input type="radio" name="q29" value="nao"></td>
+							<td><input type="radio" name="q29" value="na"></td>
+						</tr>
+						<tr>
+							<td>30</td>
+							<td>Confirmação do procedimento</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q30" value="sim"></td>
+							<td><input type="radio" name="q30" value="nao"></td>
+							<td><input type="radio" name="q30" value="na"></td>
+						</tr>
+						<tr>
+							<td>31</td>
+							<td>Aplicação do checklist de cirurgia segura</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q31" value="sim"></td>
+							<td><input type="radio" name="q31" value="nao"></td>
+							<td><input type="radio" name="q31" value="na"></td>
+						</tr>
+						<tr>
+							<td>32</td>
+							<td>Comunicação efetiva da equipe</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q32" value="sim"></td>
+							<td><input type="radio" name="q32" value="nao"></td>
+							<td><input type="radio" name="q32" value="na"></td>
+						</tr>
+						<tr>
+							<td>33</td>
+							<td>Ambiente limpo e organizado</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q33" value="sim"></td>
+							<td><input type="radio" name="q33" value="nao"></td>
+							<td><input type="radio" name="q33" value="na"></td>
+						</tr>
+						<tr>
+							<td>34</td>
+							<td>Controle de fluxo de pessoas</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q34" value="sim"></td>
+							<td><input type="radio" name="q34" value="nao"></td>
+							<td><input type="radio" name="q34" value="na"></td>
+						</tr>
+						<tr>
+							<td>35</td>
+							<td>Superfícies desinfetadas</td>
+							<td>Segurança</td>
+							<td><input type="radio" name="q35" value="sim"></td>
+							<td><input type="radio" name="q35" value="nao"></td>
+							<td><input type="radio" name="q35" value="na"></td>
+						</tr>
+						
+					</table>
+					
+					<br>
+					
+					<button class="calc" onclick="calcular()">Calcular adesão</button>
+					<button class="export" onclick="exportar()">Exportar Excel</button>
+					<button class="print" onclick="window.print()">Imprimir</button>
+					<button onclick="enviarChecklist()" style="background:#6a1b9a;color:white">
+						Enviar para pesquisa
+					</button>
+					
+					<div class="result" id="resultado"></div>
+					
+					<h3>Observações do avaliador</h3>
+					<textarea placeholder="Registrar não conformidades ou eventos observados"></textarea>
+					
+					<canvas id="grafico"></canvas>
+				<!--</form>-->
+			</div>
 			
-
-						<div class="container">
-									<!--<iframe name="destinoOculto" style="display:none;"></iframe>-->
-									<!--<form id="formEnvio" method="POST" target="destinoOculto" style="display:none;">-->
-									<h2>Auditoria de Adesão aos Protocolos Operacionais Padrão</h2>
-									
-									<p>Instrumento baseado em recomendações da ANVISA, diretrizes da SOBECC e protocolos de segurança cirúrgica para avaliação da adesão às boas
-												práticas em procedimentos oftalmológicos.</p>
-									
-									<div class="info">
-												<div>Data <input id="data" type="date"></div>
-												<div>Setor <input id="setor"></div>
-												<div>Procedimento <input id="procedimento"></div>
-												<div>Profissional observado <input id="profissional"></div>
-												<div>Avaliador <input id="avaliador"></div>
-												<div>Horário <input id="horario" type="time"></div>
-									</div>
-									
-									<table id="checklist">
-												
-												<tr>
-															<th>Nº</th>
-															<th>Item auditado</th>
-															<th>Domínio</th>
-															<th>Conforme(C)</th>
-															<th>Não Conforme(N/C)</th>
-															<th>não observado(N/O)</th>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">1. Higiene das mãos e antissepsia</td>
-												</tr>
-												<tr>
-															<td>1</td>
-															<td>Higienização das mãos antes do contato com o paciente</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q1" value="sim"></td>
-															<td><input type="radio" name="q1" value="nao"></td>
-															<td><input type="radio" name="q1" value="na"></td>
-												</tr>
-												<tr>
-															<td>2</td>
-															<td>Antissepsia cirúrgica realizada corretamente</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q2" value="sim"></td>
-															<td><input type="radio" name="q2" value="nao"></td>
-															<td><input type="radio" name="q2" value="na"></td>
-												</tr>
-												<tr>
-															<td>3</td>
-															<td>Tempo adequado de fricção</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q3" value="sim"></td>
-															<td><input type="radio" name="q3" value="nao"></td>
-															<td><input type="radio" name="q3" value="na"></td>
-												</tr>
-												<tr>
-															<td>4</td>
-															<td>Uso de solução antisséptica apropriada</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q4" value="sim"></td>
-															<td><input type="radio" name="q4" value="nao"></td>
-															<td><input type="radio" name="q4" value="na"></td>
-												</tr>
-												<tr>
-															<td>5</td>
-															<td>Antissepsia do campo operatório</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q5" value="sim"></td>
-															<td><input type="radio" name="q5" value="nao"></td>
-															<td><input type="radio" name="q5" value="na"></td>
-												</tr>
-												<tr>
-															<td>6</td>
-															<td>Manutenção da assepsia durante o procedimento</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q6" value="sim"></td>
-															<td><input type="radio" name="q6" value="nao"></td>
-															<td><input type="radio" name="q6" value="na"></td>
-												</tr>
-												<tr>
-															<td>7</td>
-															<td>Higienização das mãos após o procedimento</td>
-															<td>Antissepsia</td>
-															<td><input type="radio" name="q7" value="sim"></td>
-															<td><input type="radio" name="q7" value="nao"></td>
-															<td><input type="radio" name="q7" value="na"></td>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">2. Paramentação</td>
-												</tr>
-												<tr>
-															<td>8</td>
-															<td>Uso de gorro</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q8" value="sim"></td>
-															<td><input type="radio" name="q8" value="nao"></td>
-															<td><input type="radio" name="q8" value="na"></td>
-												</tr>
-												<tr>
-															<td>9</td>
-															<td>Uso de máscara</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q9" value="sim"></td>
-															<td><input type="radio" name="q9" value="nao"></td>
-															<td><input type="radio" name="q9" value="na"></td>
-												</tr>
-												<tr>
-															<td>10</td>
-															<td>Uso de avental estéril</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q10" value="sim"></td>
-															<td><input type="radio" name="q10" value="nao"></td>
-															<td><input type="radio" name="q10" value="na"></td>
-												</tr>
-												<tr>
-															<td>11</td>
-															<td>Uso de luvas estéreis</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q11" value="sim"></td>
-															<td><input type="radio" name="q11" value="nao"></td>
-															<td><input type="radio" name="q11" value="na"></td>
-												</tr>
-												<tr>
-															<td>12</td>
-															<td>Sequência correta de paramentação</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q12" value="sim"></td>
-															<td><input type="radio" name="q12" value="nao"></td>
-															<td><input type="radio" name="q12" value="na"></td>
-												</tr>
-												<tr>
-															<td>13</td>
-															<td>Retirada segura de EPIs</td>
-															<td>Paramentação</td>
-															<td><input type="radio" name="q13" value="sim"></td>
-															<td><input type="radio" name="q13" value="nao"></td>
-															<td><input type="radio" name="q13" value="na"></td>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">3. Campos e assepsia do campo operatório</td>
-												</tr>
-												<tr>
-															<td>14</td>
-															<td>Campos estéreis utilizados</td>
-															<td>Campos</td>
-															<td><input type="radio" name="q14" value="sim"></td>
-															<td><input type="radio" name="q14" value="nao"></td>
-															<td><input type="radio" name="q14" value="na"></td>
-												</tr>
-												<tr>
-															<td>15</td>
-															<td>Aplicação correta dos campos</td>
-															<td>Campos</td>
-															<td><input type="radio" name="q15" value="sim"></td>
-															<td><input type="radio" name="q15" value="nao"></td>
-															<td><input type="radio" name="q15" value="na"></td>
-												</tr>
-												<tr>
-															<td>16</td>
-															<td>Manutenção do campo estéril</td>
-															<td>Campos</td>
-															<td><input type="radio" name="q16" value="sim"></td>
-															<td><input type="radio" name="q16" value="nao"></td>
-															<td><input type="radio" name="q16" value="na"></td>
-												</tr>
-												<tr>
-															<td>17</td>
-															<td>Substituição de campo contaminado</td>
-															<td>Campos</td>
-															<td><input type="radio" name="q17" value="sim"></td>
-															<td><input type="radio" name="q17" value="nao"></td>
-															<td><input type="radio" name="q17" value="na"></td>
-												</tr>
-												<tr>
-															<td>18</td>
-															<td>Organização da mesa cirúrgica</td>
-															<td>Campos</td>
-															<td><input type="radio" name="q18" value="sim"></td>
-															<td><input type="radio" name="q18" value="nao"></td>
-															<td><input type="radio" name="q18" value="na"></td>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">4. Controle de instrumentais</td>
-												</tr>
-												<tr>
-															<td>19</td>
-															<td>Instrumentais esterilizados</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q19" value="sim"></td>
-															<td><input type="radio" name="q19" value="nao"></td>
-															<td><input type="radio" name="q19" value="na"></td>
-												</tr>
-												<tr>
-															<td>20</td>
-															<td>Integridade da embalagem estéril</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q20" value="sim"></td>
-															<td><input type="radio" name="q20" value="nao"></td>
-															<td><input type="radio" name="q20" value="na"></td>
-												</tr>
-												<tr>
-															<td>21</td>
-															<td>Verificação de indicadores de esterilização</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q21" value="sim"></td>
-															<td><input type="radio" name="q21" value="nao"></td>
-															<td><input type="radio" name="q21" value="na"></td>
-												</tr>
-												<tr>
-															<td>22</td>
-															<td>Manuseio asséptico</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q22" value="sim"></td>
-															<td><input type="radio" name="q22" value="nao"></td>
-															<td><input type="radio" name="q22" value="na"></td>
-												</tr>
-												<tr>
-															<td>23</td>
-															<td>Controle de contaminação cruzada</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q23" value="sim"></td>
-															<td><input type="radio" name="q23" value="nao"></td>
-															<td><input type="radio" name="q23" value="na"></td>
-												</tr>
-												<tr>
-															<td>24</td>
-															<td>Descarte adequado de perfurocortantes</td>
-															<td>Instrumentais</td>
-															<td><input type="radio" name="q24" value="sim"></td>
-															<td><input type="radio" name="q24" value="nao"></td>
-															<td><input type="radio" name="q24" value="na"></td>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">5. Preparo e manipulação de soluções</td>
-												</tr>
-												<tr>
-															<td>25</td>
-															<td>Preparo em condições assépticas</td>
-															<td>Soluções</td>
-															<td><input type="radio" name="q25" value="sim"></td>
-															<td><input type="radio" name="q25" value="nao"></td>
-															<td><input type="radio" name="q25" value="na"></td>
-												</tr>
-												<tr>
-															<td>26</td>
-															<td>Soluções identificadas corretamente</td>
-															<td>Soluções</td>
-															<td><input type="radio" name="q26" value="sim"></td>
-															<td><input type="radio" name="q26" value="nao"></td>
-															<td><input type="radio" name="q26" value="na"></td>
-												</tr>
-												<tr>
-															<td>27</td>
-															<td>Verificação de validade</td>
-															<td>Soluções</td>
-															<td><input type="radio" name="q27" value="sim"></td>
-															<td><input type="radio" name="q27" value="nao"></td>
-															<td><input type="radio" name="q27" value="na"></td>
-												</tr>
-												<tr>
-															<td>28</td>
-															<td>Técnica asséptica na manipulação</td>
-															<td>Soluções</td>
-															<td><input type="radio" name="q28" value="sim"></td>
-															<td><input type="radio" name="q28" value="nao"></td>
-															<td><input type="radio" name="q28" value="na"></td>
-												</tr>
-												
-												<tr class="section">
-															<td colspan="6">6. Segurança do paciente e organização do ambiente</td>
-												</tr>
-												<tr>
-															<td>29</td>
-															<td>Identificação correta do paciente</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q29" value="sim"></td>
-															<td><input type="radio" name="q29" value="nao"></td>
-															<td><input type="radio" name="q29" value="na"></td>
-												</tr>
-												<tr>
-															<td>30</td>
-															<td>Confirmação do procedimento</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q30" value="sim"></td>
-															<td><input type="radio" name="q30" value="nao"></td>
-															<td><input type="radio" name="q30" value="na"></td>
-												</tr>
-												<tr>
-															<td>31</td>
-															<td>Aplicação do checklist de cirurgia segura</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q31" value="sim"></td>
-															<td><input type="radio" name="q31" value="nao"></td>
-															<td><input type="radio" name="q31" value="na"></td>
-												</tr>
-												<tr>
-															<td>32</td>
-															<td>Comunicação efetiva da equipe</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q32" value="sim"></td>
-															<td><input type="radio" name="q32" value="nao"></td>
-															<td><input type="radio" name="q32" value="na"></td>
-												</tr>
-												<tr>
-															<td>33</td>
-															<td>Ambiente limpo e organizado</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q33" value="sim"></td>
-															<td><input type="radio" name="q33" value="nao"></td>
-															<td><input type="radio" name="q33" value="na"></td>
-												</tr>
-												<tr>
-															<td>34</td>
-															<td>Controle de fluxo de pessoas</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q34" value="sim"></td>
-															<td><input type="radio" name="q34" value="nao"></td>
-															<td><input type="radio" name="q34" value="na"></td>
-												</tr>
-												<tr>
-															<td>35</td>
-															<td>Superfícies desinfetadas</td>
-															<td>Segurança</td>
-															<td><input type="radio" name="q35" value="sim"></td>
-															<td><input type="radio" name="q35" value="nao"></td>
-															<td><input type="radio" name="q35" value="na"></td>
-												</tr>
-									
-									</table>
-									
-									<br>
-									
-									<button class="calc" onclick="calcular()">Calcular adesão</button>
-									<button class="export" onclick="exportar()">Exportar Excel</button>
-									<button class="print" onclick="window.print()">Imprimir</button>
-									<button onclick="enviarChecklist()" style="background:#6a1b9a;color:white">
-												Enviar para pesquisa
-									</button>
-									
-									<div class="result" id="resultado"></div>
-									
-									<h3>Observações do avaliador</h3>
-									<textarea placeholder="Registrar não conformidades ou eventos observados"></textarea>
-									
-									<canvas id="grafico"></canvas>
-									<!--</form>-->
-						</div>
-
-</div>
-
-<!-- ================= FORM 2 ================= -->
-
-<div id="form2" class="page">
+		</div>
+		
+		<!-- ================= FORM 2 ================= -->
+		
+		<div id="form2" class="page">
 			
 			<div class="container2">
-						<h2>Roteiro de Entrevista Semiestruturada</h2>
-						<h2 style="font-size: 15px; font-weight: normal; color: #495057;">Profissionais de Enfermagem do Centro Cirúrgico Oftalmológico</h2>
-						
-						<div class="bloco">
-									<p>
-												Este roteiro tem como finalidade orientar a realização das entrevistas semiestruturadas
-												com profissionais de enfermagem atuantes no centro cirúrgico oftalmológico, visando
-												compreender percepções, práticas, dificuldades e estratégias relacionadas à prevenção
-												de infecções e à adesão aos protocolos operacionais padrão.
-									</p>
+				<h2>Roteiro de Entrevista Semiestruturada</h2>
+				<h2 style="font-size: 15px; font-weight: normal; color: #495057;">Profissionais de Enfermagem do Centro Cirúrgico Oftalmológico</h2>
+				
+				<div class="bloco">
+					<p>
+						Este roteiro tem como finalidade orientar a realização das entrevistas semiestruturadas
+						com profissionais de enfermagem atuantes no centro cirúrgico oftalmológico, visando
+						compreender percepções, práticas, dificuldades e estratégias relacionadas à prevenção
+						de infecções e à adesão aos protocolos operacionais padrão.
+					</p>
+				</div>
+				
+				<div class="instrucoes">
+					<strong>Orientações ao entrevistador:</strong><br>
+					Realizar a entrevista em ambiente reservado, após assinatura do TCLE. Informar ao participante
+					sobre os objetivos da pesquisa, garantir sigilo e confidencialidade, e solicitar autorização
+					para gravação de áudio. Registrar observações relevantes em diário de campo.
+				</div>
+				
+				<div class="bloco">
+					<h3>1. Identificação da entrevista</h3>
+					
+					<div class="campo">
+						<strong>Código do participante:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="Digite o código..."></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Data:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="DD/MM/AAAA"></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Horário:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="HH:MM"></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Local:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="Digite o local..."></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Categoria profissional:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="Ex: Enfermeiro, Técnico..."></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Tempo de atuação na enfermagem:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="Ex: 5 anos"></span>
+					</div>
+					
+					<div class="campo">
+						<strong>Tempo de atuação no centro cirúrgico oftalmológico:</strong>
+						<span class="linha" contenteditable="true" data-placeholder="Ex: 3 anos"></span>
+					</div>
+				</div>
+				
+				<div class="bloco">
+					<h3>2. Questões norteadoras</h3>
+					
+					<div class="pergunta">
+						<strong>1. Fale sobre sua atuação no centro cirúrgico oftalmológico e suas principais atribuições.</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>2. Como você percebe a importância da prevenção de infecções no contexto das cirurgias oftalmológicas?</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>3. Quais medidas de prevenção de infecção você considera mais importantes na rotina do centro cirúrgico?</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>4. Na sua percepção, os protocolos operacionais padrão da clínica são claros e de fácil aplicação?</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>5. Como ocorre, na prática, a adesão da equipe de enfermagem aos protocolos de prevenção de infecções?</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>6. Quais dificuldades ou barreiras você identifica para o cumprimento adequado desses protocolos?</strong>
+						<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+					</div>
+					
+					<div class="pergunta">
+						<strong>7. Fatores como sobrecarga de trabalho, tempo reduzido, rotina intensa ou falta de insumos interferem no cumprimento das medidas
+							de prevenção? De que forma?</strong>
+							<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
 						</div>
 						
-						<div class="instrucoes">
-									<strong>Orientações ao entrevistador:</strong><br>
-									Realizar a entrevista em ambiente reservado, após assinatura do TCLE. Informar ao participante
-									sobre os objetivos da pesquisa, garantir sigilo e confidencialidade, e solicitar autorização
-									para gravação de áudio. Registrar observações relevantes em diário de campo.
-						</div>
-						
-						<div class="bloco">
-									<h3>1. Identificação da entrevista</h3>
-									
-									<div class="campo">
-												<strong>Código do participante:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="Digite o código..."></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Data:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="DD/MM/AAAA"></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Horário:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="HH:MM"></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Local:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="Digite o local..."></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Categoria profissional:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="Ex: Enfermeiro, Técnico..."></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Tempo de atuação na enfermagem:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="Ex: 5 anos"></span>
-									</div>
-									
-									<div class="campo">
-												<strong>Tempo de atuação no centro cirúrgico oftalmológico:</strong>
-												<span class="linha" contenteditable="true" data-placeholder="Ex: 3 anos"></span>
-									</div>
-						</div>
-						
-						<div class="bloco">
-									<h3>2. Questões norteadoras</h3>
-									
-									<div class="pergunta">
-												<strong>1. Fale sobre sua atuação no centro cirúrgico oftalmológico e suas principais atribuições.</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+						<div class="pergunta">
+							<strong>8. Como você avalia as práticas relacionadas à higienização das mãos, paramentação, antissepsia e manuseio de materiais dentro da
+								clínica?</strong>
+								<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+							</div>
+							
+							<div class="pergunta">
+								<strong>9. Na sua opinião, a equipe recebe treinamento ou atualização suficiente sobre prevenção de infecções e segurança
+									cirúrgica?</strong>
+									<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+								</div>
+								
+								<div class="pergunta">
+									<strong>10. Como você percebe a participação da gestão no incentivo ao cumprimento dos protocolos e boas práticas?</strong>
+									<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+								</div>
+								
+								<div class="pergunta">
+									<strong>11. Você já presenciou situações de não conformidade relacionadas à prevenção de infecções? Como essas situações foram
+										conduzidas?</strong>
+										<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
 									</div>
 									
 									<div class="pergunta">
-												<strong>2. Como você percebe a importância da prevenção de infecções no contexto das cirurgias oftalmológicas?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+										<strong>12. Quais estratégias você considera importantes para melhorar a adesão da equipe aos protocolos operacionais padrão?</strong>
+										<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
 									</div>
 									
 									<div class="pergunta">
-												<strong>3. Quais medidas de prevenção de infecção você considera mais importantes na rotina do centro cirúrgico?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
+										<strong>13. Há mais algum aspecto que você considere relevante sobre a prevenção de infecções no centro cirúrgico oftalmológico?</strong>
+										<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
 									</div>
-									
-									<div class="pergunta">
-												<strong>4. Na sua percepção, os protocolos operacionais padrão da clínica são claros e de fácil aplicação?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>5. Como ocorre, na prática, a adesão da equipe de enfermagem aos protocolos de prevenção de infecções?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>6. Quais dificuldades ou barreiras você identifica para o cumprimento adequado desses protocolos?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>7. Fatores como sobrecarga de trabalho, tempo reduzido, rotina intensa ou falta de insumos interferem no cumprimento das medidas
-															de prevenção? De que forma?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>8. Como você avalia as práticas relacionadas à higienização das mãos, paramentação, antissepsia e manuseio de materiais dentro da
-															clínica?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>9. Na sua opinião, a equipe recebe treinamento ou atualização suficiente sobre prevenção de infecções e segurança
-															cirúrgica?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>10. Como você percebe a participação da gestão no incentivo ao cumprimento dos protocolos e boas práticas?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>11. Você já presenciou situações de não conformidade relacionadas à prevenção de infecções? Como essas situações foram
-															conduzidas?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>12. Quais estratégias você considera importantes para melhorar a adesão da equipe aos protocolos operacionais padrão?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-									
-									<div class="pergunta">
-												<strong>13. Há mais algum aspecto que você considere relevante sobre a prevenção de infecções no centro cirúrgico oftalmológico?</strong>
-												<div class="resposta" contenteditable="true" data-placeholder="Registre a resposta do participante..."></div>
-									</div>
-						</div>
-						
-						<div class="bloco">
+								</div>
+								
+								<div class="bloco">
 									<h3>3. Observações do entrevistador</h3>
 									<div class="resposta" style="min-height: 100px;" contenteditable="true"
-														data-placeholder="Registre aqui observações relevantes sobre a entrevista, comportamento do participante, intercorrências ou aspectos não captados pela gravação..."></div>
+									data-placeholder="Registre aqui observações relevantes sobre a entrevista, comportamento do participante, intercorrências ou aspectos não captados pela gravação..."></div>
 									<div class="observacao">Espaço reservado para anotações sobre comportamento, intercorrências, linguagem não-verbal e outros aspectos
-												relevantes da entrevista.
+										relevantes da entrevista.
 									</div>
-						</div>
-						
-						<div class="assinatura">
+								</div>
+								
+								<div class="assinatura">
 									<div class="assinatura-item">
-												<strong>Assinatura do entrevistador</strong>
-												<div class="assinatura-linha" contenteditable="true"></div>
+										<strong>Assinatura do entrevistador</strong>
+										<div class="assinatura-linha" contenteditable="true"></div>
 									</div>
 									<div class="assinatura-item">
-												<strong>Assinatura do participante</strong>
-												<div class="assinatura-linha" contenteditable="true"></div>
+										<strong>Assinatura do participante</strong>
+										<div class="assinatura-linha" contenteditable="true"></div>
 									</div>
-						</div>
-						
-						<button onclick="enviarEntrevista()" style="background:#6a1b9a;color:white">
+								</div>
+								
+								<button onclick="enviarEntrevista()" style="background:#6a1b9a;color:white">
 									Salvar Entrevista
-						</button>
-			
-			</div>
-
-</div>
-
-
-<iframe name="hiddenFrame" style="display:none;"></iframe>
-
-<form id="formEnvio" method="POST" target="hiddenFrame" style="display:none;"></form>
-
-<script>
-
-   function coletarDados() {
-      console.log("coletarDados");
-      const dados = {};
-
-      // campos principais
-      dados.data = document.getElementById("data")?.value || "";
-      dados.setor = document.getElementById("setor")?.value || "";
-      dados.procedimento = document.getElementById("procedimento")?.value || "";
-      dados.profissional = document.getElementById("profissional")?.value || "";
-      dados.avaliador = document.getElementById("avaliador")?.value || "";
-
-      // radios automáticos q1...q35
-      document.querySelectorAll('input[type=radio]:checked')
-       .forEach(el => {
-          dados[el.name] = el.value;
-       });
-
-      return dados;
-   }
-   function coletarEntrevista(){
-      const dados = {};
-
-      dados.tipo = "entrevista";
-
-      // ===== IDENTIFICAÇÃO =====
-      const linhas = document.querySelectorAll('#form2 .linha');
-
-      dados.codigo = linhas[0]?.innerText.trim() || "";
-      dados.data = linhas[1]?.innerText.trim() || "";
-      dados.horario = linhas[2]?.innerText.trim() || "";
-      dados.local = linhas[3]?.innerText.trim() || "";
-      dados.categoria = linhas[4]?.innerText.trim() || "";
-      dados.tempo_enfermagem = linhas[5]?.innerText.trim() || "";
-      dados.tempo_centro = linhas[6]?.innerText.trim() || "";
-
-      // ===== RESPOSTAS =====
-      const respostas = document.querySelectorAll('#form2 .resposta');
-
-      respostas.forEach((el, i) => {
-         dados["pergunta_" + (i + 1)] = el.innerText.trim();
-      });
-
-      // ===== ASSINATURAS =====
-      const assinaturas = document.querySelectorAll('#form2 .assinatura-linha');
-
-      dados.assinatura_entrevistador = assinaturas[0]?.innerText.trim() || "";
-      dados.assinatura_participante = assinaturas[1]?.innerText.trim() || "";
-
-      return dados;
-   }
-
-   function enviarEntrevista() {
-      const dados = coletarEntrevista();
-      dados.tipo = "entrevista";
-
-      enviarGenerico(dados);
-   }
-   function enviarChecklist(){
-      const dados = coletarDados();
-      dados.tipo = "checklist";
-
-      enviarGenerico(dados);
-   }
-   
-   function enviarGenerico() {
-      console.log("enviarChecklist2");
-      const url = "https://script.google.com/macros/s/AKfycbw8BfN3nwyWymiMo0ktJB97Kgz8TD9GWS1yozL-PiusSWap1OwZiILTqjawdiDHMaoy/exec";
-      const dados = coletarDados();
-      const form = document.getElementById("formEnvio");
-
-      form.action = url;
-      // limpa tudo
-      form.innerHTML = "";
-
-      // cria todos os campos dinamicamente
-      for (let key in dados) {
-         const input = document.createElement("input");
-         input.type = "hidden";
-         input.name = key;
-         input.value = dados[key];
-         form.appendChild(input);
-      }
-
-      form.submit();
-      alert("Dados enviados com sucesso!");
-      // limpa interface
-      limparFormulario();
-
-      
-   }
-
-   function limparFormulario(){
-
-      // inputs normais
-      document.querySelectorAll('input[type="text"], input[type="date"]')
-       .forEach(el => el.value = "");
-
-      // radios
-      document.querySelectorAll('input[type="radio"]')
-       .forEach(el => el.checked = false);
-
-      // textarea
-      document.querySelectorAll('textarea')
-       .forEach(el => el.value = "");
-
-      // contenteditable (seu form 2 usa isso)
-      document.querySelectorAll('[contenteditable="true"]')
-       .forEach(el => {
-          el.innerText = "";
-       });
-
-      // resultado
-      const res = document.getElementById("resultado");
-      if(res) res.innerHTML = "";
-
-      // gráfico (chart.js)
-      if (typeof chart !== "undefined" && chart) {
-         chart.destroy();
-      }
-   }
-
-   function mostrar(id) {
-      document.querySelectorAll(".page").forEach(p => {
-         p.classList.remove("active")
-      })
-      document.getElementById(id).classList.add("active")
-   }
-
-
-   let chart;
-
-   function calcular() {
-      let radios = document.querySelectorAll('input[type=radio]:checked');
-      let total = 0;
-      let conforme = 0;
-
-      radios.forEach(r => {
-         if (r.value != "na") {
-            total++;
-            if (r.value == "sim") conforme++;
-         }
-      });
-
-      let indice = (conforme / total) * 100;
-      let nivel = indice >= 80 ? "Adesão adequada" : indice >= 60 ? "Adesão moderada" : "Baixa adesão";
-
-      document.getElementById("resultado").innerHTML = "Índice de adesão: " + indice.toFixed(1) + "% — " + nivel;
-
-      if (chart) chart.destroy();
-
-      chart = new Chart(document.getElementById("grafico"), {
-         type: "pie",
-         data: {
-            labels: ["Conforme", "Não conforme"],
-            datasets: [{data: [conforme, total - conforme]}]
-         }
-      });
-   }
-
-   function exportar() {
-      let tabela = document.getElementById("checklist").outerHTML;
-      let html = "<html><body>" + tabela + "</body></html>";
-      let url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
-      let link = document.createElement("a");
-      link.href = url;
-      link.download = "auditoria_pop_oftalmologia.xls";
-      link.click();
-   }
-
-
-   // Roteiro Ajusta placeholders para elementos contenteditable
-   document.querySelectorAll('[contenteditable="true"]').forEach(el => {
-      if (el.innerText.trim() === '' || el.innerText === el.getAttribute('data-placeholder')) {
-         el.innerText = '';
-         el.setAttribute('data-placeholder', el.getAttribute('data-placeholder') || 'Clique para preencher...');
-      }
-
-      el.addEventListener('focus', function () {
-         if (this.innerText === this.getAttribute('data-placeholder')) {
-            this.innerText = '';
-         }
-      });
-
-      el.addEventListener('blur', function () {
-         if (this.innerText.trim() === '') {
-            this.innerText = this.getAttribute('data-placeholder') || '';
-         }
-      });
-   });
-
-</script>
-
-</body>
-</html>
+								</button>
+								
+							</div>
+							
+						</div>
+						
+						
+						<iframe name="hiddenFrame" style="display:none;"></iframe>
+						
+						<form id="formEnvio" method="POST" target="hiddenFrame" style="display:none;"></form>
+						
+						<script>
+							
+							function coletarDados() {
+								console.log("coletarDados");
+								const dados = {};
+								
+								// campos principais
+								dados.data = document.getElementById("data")?.value || "";
+								dados.setor = document.getElementById("setor")?.value || "";
+								dados.procedimento = document.getElementById("procedimento")?.value || "";
+								dados.profissional = document.getElementById("profissional")?.value || "";
+								dados.avaliador = document.getElementById("avaliador")?.value || "";
+								
+								// radios automáticos q1...q35
+								document.querySelectorAll('input[type=radio]:checked')
+								.forEach(el => {
+									dados[el.name] = el.value;
+								});
+								
+								return dados;
+							}
+							function coletarEntrevista(){
+								const dados = {};
+								
+								dados.tipo = "entrevista";
+								
+								// ===== IDENTIFICAÇÃO =====
+								const linhas = document.querySelectorAll('#form2 .linha');
+								
+								dados.codigo = linhas[0]?.innerText.trim() || "";
+								dados.data = linhas[1]?.innerText.trim() || "";
+								dados.horario = linhas[2]?.innerText.trim() || "";
+								dados.local = linhas[3]?.innerText.trim() || "";
+								dados.categoria = linhas[4]?.innerText.trim() || "";
+								dados.tempo_enfermagem = linhas[5]?.innerText.trim() || "";
+								dados.tempo_centro = linhas[6]?.innerText.trim() || "";
+								
+								// ===== RESPOSTAS =====
+								const respostas = document.querySelectorAll('#form2 .resposta');
+								
+								respostas.forEach((el, i) => {
+									dados["pergunta_" + (i + 1)] = el.innerText.trim();
+								});
+								
+								// ===== ASSINATURAS =====
+								const assinaturas = document.querySelectorAll('#form2 .assinatura-linha');
+								
+								dados.assinatura_entrevistador = assinaturas[0]?.innerText.trim() || "";
+								dados.assinatura_participante = assinaturas[1]?.innerText.trim() || "";
+								
+								return dados;
+							}
+							
+							function enviarEntrevista() {
+								const dados = coletarEntrevista();
+								dados.tipo = "entrevista";
+								
+								enviarGenerico(dados);
+							}
+							function enviarChecklist(){
+								const dados = coletarDados();
+								dados.tipo = "checklist";
+								
+								enviarGenerico(dados);
+							}
+							
+							function enviarGenerico() {
+								console.log("enviarChecklist2");
+								const url = "https://script.google.com/macros/s/AKfycbw8BfN3nwyWymiMo0ktJB97Kgz8TD9GWS1yozL-PiusSWap1OwZiILTqjawdiDHMaoy/exec";
+								const dados = coletarDados();
+								const form = document.getElementById("formEnvio");
+								
+								form.action = url;
+								// limpa tudo
+								form.innerHTML = "";
+								
+								// cria todos os campos dinamicamente
+								for (let key in dados) {
+									const input = document.createElement("input");
+									input.type = "hidden";
+									input.name = key;
+									input.value = dados[key];
+									form.appendChild(input);
+								}
+								
+								form.submit();
+								alert("Dados enviados com sucesso!");
+								// limpa interface
+								limparFormulario();
+								
+								
+							}
+							
+							function limparFormulario(){
+								
+								// inputs normais
+								document.querySelectorAll('input[type="text"], input[type="date"]')
+								.forEach(el => el.value = "");
+								
+								// radios
+								document.querySelectorAll('input[type="radio"]')
+								.forEach(el => el.checked = false);
+								
+								// textarea
+								document.querySelectorAll('textarea')
+								.forEach(el => el.value = "");
+								
+								// contenteditable (seu form 2 usa isso)
+								document.querySelectorAll('[contenteditable="true"]')
+								.forEach(el => {
+									el.innerText = "";
+								});
+								
+								// resultado
+								const res = document.getElementById("resultado");
+								if(res) res.innerHTML = "";
+								
+								// gráfico (chart.js)
+								if (typeof chart !== "undefined" && chart) {
+									chart.destroy();
+								}
+							}
+							
+							function mostrar(id) {
+								document.querySelectorAll(".page").forEach(p => {
+									p.classList.remove("active")
+								})
+								document.getElementById(id).classList.add("active")
+							}
+							
+							
+							let chart;
+							
+							function calcular() {
+								let radios = document.querySelectorAll('input[type=radio]:checked');
+								let total = 0;
+								let conforme = 0;
+								
+								radios.forEach(r => {
+									if (r.value != "na") {
+										total++;
+										if (r.value == "sim") conforme++;
+									}
+								});
+								
+								let indice = (conforme / total) * 100;
+								let nivel = indice >= 80 ? "Adesão adequada" : indice >= 60 ? "Adesão moderada" : "Baixa adesão";
+								
+								document.getElementById("resultado").innerHTML = "Índice de adesão: " + indice.toFixed(1) + "% — " + nivel;
+								
+								if (chart) chart.destroy();
+								
+								chart = new Chart(document.getElementById("grafico"), {
+									type: "pie",
+									data: {
+										labels: ["Conforme", "Não conforme"],
+										datasets: [{data: [conforme, total - conforme]}]
+									}
+								});
+							}
+							
+							function exportar() {
+								let tabela = document.getElementById("checklist").outerHTML;
+								let html = "<html><body>" + tabela + "</body></html>";
+								let url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+								let link = document.createElement("a");
+								link.href = url;
+								link.download = "auditoria_pop_oftalmologia.xls";
+								link.click();
+							}
+							
+							
+							// Roteiro Ajusta placeholders para elementos contenteditable
+							document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+								if (el.innerText.trim() === '' || el.innerText === el.getAttribute('data-placeholder')) {
+									el.innerText = '';
+									el.setAttribute('data-placeholder', el.getAttribute('data-placeholder') || 'Clique para preencher...');
+								}
+								
+								el.addEventListener('focus', function () {
+									if (this.innerText === this.getAttribute('data-placeholder')) {
+										this.innerText = '';
+									}
+								});
+								
+								el.addEventListener('blur', function () {
+									if (this.innerText.trim() === '') {
+										this.innerText = this.getAttribute('data-placeholder') || '';
+									}
+								});
+							});
+							
+						</script>
+						
+					</body>
+					</html>
+					
