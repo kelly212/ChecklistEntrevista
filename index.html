@@ -463,360 +463,361 @@
 <!-- ================= FORM 1 ================= -->
 
 <div id="form1" class="page active">
-			<iframe name="destinoOculto" style="display:none;"></iframe>
+
 			
-			<form id="formEnvio" method="POST" target="destinoOculto" style="display:none;">
-			<div class="container">
-						
-						<h2>Auditoria de Adesão aos Protocolos Operacionais Padrão</h2>
-						
-						<p>Instrumento baseado em recomendações da ANVISA, diretrizes da SOBECC e protocolos de segurança cirúrgica para avaliação da adesão às boas
-									práticas em procedimentos oftalmológicos.</p>
-						
-						<div class="info">
-									<div>Data <input id="data"></div>
-									<div>Setor <input id="setor"></div>
-									<div>Procedimento <input id="procedimento"></div>
-									<div>Profissional observado <input id="profissional"></div>
-									<div>Avaliador <input id="avaliador"></div>
-									<div>Horário <input  id="horario"></div>
+
+						<div class="container">
+									<!--<iframe name="destinoOculto" style="display:none;"></iframe>-->
+									<!--<form id="formEnvio" method="POST" target="destinoOculto" style="display:none;">-->
+									<h2>Auditoria de Adesão aos Protocolos Operacionais Padrão</h2>
+									
+									<p>Instrumento baseado em recomendações da ANVISA, diretrizes da SOBECC e protocolos de segurança cirúrgica para avaliação da adesão às boas
+												práticas em procedimentos oftalmológicos.</p>
+									
+									<div class="info">
+												<div>Data <input id="data"></div>
+												<div>Setor <input id="setor"></div>
+												<div>Procedimento <input id="procedimento"></div>
+												<div>Profissional observado <input id="profissional"></div>
+												<div>Avaliador <input id="avaliador"></div>
+												<div>Horário <input id="horario"></div>
+									</div>
+									
+									<table id="checklist">
+												
+												<tr>
+															<th>Nº</th>
+															<th>Item auditado</th>
+															<th>Domínio</th>
+															<th>Conforme(C)</th>
+															<th>Não Conforme(N/C)</th>
+															<th>não observado(N/O)</th>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">1. Higiene das mãos e antissepsia</td>
+												</tr>
+												<tr>
+															<td>1</td>
+															<td>Higienização das mãos antes do contato com o paciente</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q1" value="sim"></td>
+															<td><input type="radio" name="q1" value="nao"></td>
+															<td><input type="radio" name="q1" value="na"></td>
+												</tr>
+												<tr>
+															<td>2</td>
+															<td>Antissepsia cirúrgica realizada corretamente</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q2" value="sim"></td>
+															<td><input type="radio" name="q2" value="nao"></td>
+															<td><input type="radio" name="q2" value="na"></td>
+												</tr>
+												<tr>
+															<td>3</td>
+															<td>Tempo adequado de fricção</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q3" value="sim"></td>
+															<td><input type="radio" name="q3" value="nao"></td>
+															<td><input type="radio" name="q3" value="na"></td>
+												</tr>
+												<tr>
+															<td>4</td>
+															<td>Uso de solução antisséptica apropriada</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q4" value="sim"></td>
+															<td><input type="radio" name="q4" value="nao"></td>
+															<td><input type="radio" name="q4" value="na"></td>
+												</tr>
+												<tr>
+															<td>5</td>
+															<td>Antissepsia do campo operatório</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q5" value="sim"></td>
+															<td><input type="radio" name="q5" value="nao"></td>
+															<td><input type="radio" name="q5" value="na"></td>
+												</tr>
+												<tr>
+															<td>6</td>
+															<td>Manutenção da assepsia durante o procedimento</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q6" value="sim"></td>
+															<td><input type="radio" name="q6" value="nao"></td>
+															<td><input type="radio" name="q6" value="na"></td>
+												</tr>
+												<tr>
+															<td>7</td>
+															<td>Higienização das mãos após o procedimento</td>
+															<td>Antissepsia</td>
+															<td><input type="radio" name="q7" value="sim"></td>
+															<td><input type="radio" name="q7" value="nao"></td>
+															<td><input type="radio" name="q7" value="na"></td>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">2. Paramentação</td>
+												</tr>
+												<tr>
+															<td>8</td>
+															<td>Uso de gorro</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q8" value="sim"></td>
+															<td><input type="radio" name="q8" value="nao"></td>
+															<td><input type="radio" name="q8" value="na"></td>
+												</tr>
+												<tr>
+															<td>9</td>
+															<td>Uso de máscara</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q9" value="sim"></td>
+															<td><input type="radio" name="q9" value="nao"></td>
+															<td><input type="radio" name="q9" value="na"></td>
+												</tr>
+												<tr>
+															<td>10</td>
+															<td>Uso de avental estéril</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q10" value="sim"></td>
+															<td><input type="radio" name="q10" value="nao"></td>
+															<td><input type="radio" name="q10" value="na"></td>
+												</tr>
+												<tr>
+															<td>11</td>
+															<td>Uso de luvas estéreis</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q11" value="sim"></td>
+															<td><input type="radio" name="q11" value="nao"></td>
+															<td><input type="radio" name="q11" value="na"></td>
+												</tr>
+												<tr>
+															<td>12</td>
+															<td>Sequência correta de paramentação</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q12" value="sim"></td>
+															<td><input type="radio" name="q12" value="nao"></td>
+															<td><input type="radio" name="q12" value="na"></td>
+												</tr>
+												<tr>
+															<td>13</td>
+															<td>Retirada segura de EPIs</td>
+															<td>Paramentação</td>
+															<td><input type="radio" name="q13" value="sim"></td>
+															<td><input type="radio" name="q13" value="nao"></td>
+															<td><input type="radio" name="q13" value="na"></td>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">3. Campos e assepsia do campo operatório</td>
+												</tr>
+												<tr>
+															<td>14</td>
+															<td>Campos estéreis utilizados</td>
+															<td>Campos</td>
+															<td><input type="radio" name="q14" value="sim"></td>
+															<td><input type="radio" name="q14" value="nao"></td>
+															<td><input type="radio" name="q14" value="na"></td>
+												</tr>
+												<tr>
+															<td>15</td>
+															<td>Aplicação correta dos campos</td>
+															<td>Campos</td>
+															<td><input type="radio" name="q15" value="sim"></td>
+															<td><input type="radio" name="q15" value="nao"></td>
+															<td><input type="radio" name="q15" value="na"></td>
+												</tr>
+												<tr>
+															<td>16</td>
+															<td>Manutenção do campo estéril</td>
+															<td>Campos</td>
+															<td><input type="radio" name="q16" value="sim"></td>
+															<td><input type="radio" name="q16" value="nao"></td>
+															<td><input type="radio" name="q16" value="na"></td>
+												</tr>
+												<tr>
+															<td>17</td>
+															<td>Substituição de campo contaminado</td>
+															<td>Campos</td>
+															<td><input type="radio" name="q17" value="sim"></td>
+															<td><input type="radio" name="q17" value="nao"></td>
+															<td><input type="radio" name="q17" value="na"></td>
+												</tr>
+												<tr>
+															<td>18</td>
+															<td>Organização da mesa cirúrgica</td>
+															<td>Campos</td>
+															<td><input type="radio" name="q18" value="sim"></td>
+															<td><input type="radio" name="q18" value="nao"></td>
+															<td><input type="radio" name="q18" value="na"></td>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">4. Controle de instrumentais</td>
+												</tr>
+												<tr>
+															<td>19</td>
+															<td>Instrumentais esterilizados</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q19" value="sim"></td>
+															<td><input type="radio" name="q19" value="nao"></td>
+															<td><input type="radio" name="q19" value="na"></td>
+												</tr>
+												<tr>
+															<td>20</td>
+															<td>Integridade da embalagem estéril</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q20" value="sim"></td>
+															<td><input type="radio" name="q20" value="nao"></td>
+															<td><input type="radio" name="q20" value="na"></td>
+												</tr>
+												<tr>
+															<td>21</td>
+															<td>Verificação de indicadores de esterilização</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q21" value="sim"></td>
+															<td><input type="radio" name="q21" value="nao"></td>
+															<td><input type="radio" name="q21" value="na"></td>
+												</tr>
+												<tr>
+															<td>22</td>
+															<td>Manuseio asséptico</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q22" value="sim"></td>
+															<td><input type="radio" name="q22" value="nao"></td>
+															<td><input type="radio" name="q22" value="na"></td>
+												</tr>
+												<tr>
+															<td>23</td>
+															<td>Controle de contaminação cruzada</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q23" value="sim"></td>
+															<td><input type="radio" name="q23" value="nao"></td>
+															<td><input type="radio" name="q23" value="na"></td>
+												</tr>
+												<tr>
+															<td>24</td>
+															<td>Descarte adequado de perfurocortantes</td>
+															<td>Instrumentais</td>
+															<td><input type="radio" name="q24" value="sim"></td>
+															<td><input type="radio" name="q24" value="nao"></td>
+															<td><input type="radio" name="q24" value="na"></td>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">5. Preparo e manipulação de soluções</td>
+												</tr>
+												<tr>
+															<td>25</td>
+															<td>Preparo em condições assépticas</td>
+															<td>Soluções</td>
+															<td><input type="radio" name="q25" value="sim"></td>
+															<td><input type="radio" name="q25" value="nao"></td>
+															<td><input type="radio" name="q25" value="na"></td>
+												</tr>
+												<tr>
+															<td>26</td>
+															<td>Soluções identificadas corretamente</td>
+															<td>Soluções</td>
+															<td><input type="radio" name="q26" value="sim"></td>
+															<td><input type="radio" name="q26" value="nao"></td>
+															<td><input type="radio" name="q26" value="na"></td>
+												</tr>
+												<tr>
+															<td>27</td>
+															<td>Verificação de validade</td>
+															<td>Soluções</td>
+															<td><input type="radio" name="q27" value="sim"></td>
+															<td><input type="radio" name="q27" value="nao"></td>
+															<td><input type="radio" name="q27" value="na"></td>
+												</tr>
+												<tr>
+															<td>28</td>
+															<td>Técnica asséptica na manipulação</td>
+															<td>Soluções</td>
+															<td><input type="radio" name="q28" value="sim"></td>
+															<td><input type="radio" name="q28" value="nao"></td>
+															<td><input type="radio" name="q28" value="na"></td>
+												</tr>
+												
+												<tr class="section">
+															<td colspan="6">6. Segurança do paciente e organização do ambiente</td>
+												</tr>
+												<tr>
+															<td>29</td>
+															<td>Identificação correta do paciente</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q29" value="sim"></td>
+															<td><input type="radio" name="q29" value="nao"></td>
+															<td><input type="radio" name="q29" value="na"></td>
+												</tr>
+												<tr>
+															<td>30</td>
+															<td>Confirmação do procedimento</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q30" value="sim"></td>
+															<td><input type="radio" name="q30" value="nao"></td>
+															<td><input type="radio" name="q30" value="na"></td>
+												</tr>
+												<tr>
+															<td>31</td>
+															<td>Aplicação do checklist de cirurgia segura</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q31" value="sim"></td>
+															<td><input type="radio" name="q31" value="nao"></td>
+															<td><input type="radio" name="q31" value="na"></td>
+												</tr>
+												<tr>
+															<td>32</td>
+															<td>Comunicação efetiva da equipe</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q32" value="sim"></td>
+															<td><input type="radio" name="q32" value="nao"></td>
+															<td><input type="radio" name="q32" value="na"></td>
+												</tr>
+												<tr>
+															<td>33</td>
+															<td>Ambiente limpo e organizado</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q33" value="sim"></td>
+															<td><input type="radio" name="q33" value="nao"></td>
+															<td><input type="radio" name="q33" value="na"></td>
+												</tr>
+												<tr>
+															<td>34</td>
+															<td>Controle de fluxo de pessoas</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q34" value="sim"></td>
+															<td><input type="radio" name="q34" value="nao"></td>
+															<td><input type="radio" name="q34" value="na"></td>
+												</tr>
+												<tr>
+															<td>35</td>
+															<td>Superfícies desinfetadas</td>
+															<td>Segurança</td>
+															<td><input type="radio" name="q35" value="sim"></td>
+															<td><input type="radio" name="q35" value="nao"></td>
+															<td><input type="radio" name="q35" value="na"></td>
+												</tr>
+									
+									</table>
+									
+									<br>
+									
+									<button class="calc" onclick="calcular()">Calcular adesão</button>
+									<button class="export" onclick="exportar()">Exportar Excel</button>
+									<button class="print" onclick="window.print()">Imprimir</button>
+									<button onclick="enviar()" style="background:#6a1b9a;color:white">
+												Enviar para pesquisa
+									</button>
+									
+									<div class="result" id="resultado"></div>
+									
+									<h3>Observações do avaliador</h3>
+									<textarea placeholder="Registrar não conformidades ou eventos observados"></textarea>
+									
+									<canvas id="grafico"></canvas>
+									<!--</form>-->
 						</div>
-						
-						<table id="checklist">
-									
-									<tr>
-												<th>Nº</th>
-												<th>Item auditado</th>
-												<th>Domínio</th>
-												<th>Conforme(C)</th>
-												<th>Não Conforme(N/C)</th>
-												<th>não observado(N/O)</th>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">1. Higiene das mãos e antissepsia</td>
-									</tr>
-									<tr>
-												<td>1</td>
-												<td>Higienização das mãos antes do contato com o paciente</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q1" value="sim"></td>
-												<td><input type="radio" name="q1" value="nao"></td>
-												<td><input type="radio" name="q1" value="na"></td>
-									</tr>
-									<tr>
-												<td>2</td>
-												<td>Antissepsia cirúrgica realizada corretamente</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q2" value="sim"></td>
-												<td><input type="radio" name="q2" value="nao"></td>
-												<td><input type="radio" name="q2" value="na"></td>
-									</tr>
-									<tr>
-												<td>3</td>
-												<td>Tempo adequado de fricção</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q3" value="sim"></td>
-												<td><input type="radio" name="q3" value="nao"></td>
-												<td><input type="radio" name="q3" value="na"></td>
-									</tr>
-									<tr>
-												<td>4</td>
-												<td>Uso de solução antisséptica apropriada</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q4" value="sim"></td>
-												<td><input type="radio" name="q4" value="nao"></td>
-												<td><input type="radio" name="q4" value="na"></td>
-									</tr>
-									<tr>
-												<td>5</td>
-												<td>Antissepsia do campo operatório</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q5" value="sim"></td>
-												<td><input type="radio" name="q5" value="nao"></td>
-												<td><input type="radio" name="q5" value="na"></td>
-									</tr>
-									<tr>
-												<td>6</td>
-												<td>Manutenção da assepsia durante o procedimento</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q6" value="sim"></td>
-												<td><input type="radio" name="q6" value="nao"></td>
-												<td><input type="radio" name="q6" value="na"></td>
-									</tr>
-									<tr>
-												<td>7</td>
-												<td>Higienização das mãos após o procedimento</td>
-												<td>Antissepsia</td>
-												<td><input type="radio" name="q7" value="sim"></td>
-												<td><input type="radio" name="q7" value="nao"></td>
-												<td><input type="radio" name="q7" value="na"></td>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">2. Paramentação</td>
-									</tr>
-									<tr>
-												<td>8</td>
-												<td>Uso de gorro</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q8" value="sim"></td>
-												<td><input type="radio" name="q8" value="nao"></td>
-												<td><input type="radio" name="q8" value="na"></td>
-									</tr>
-									<tr>
-												<td>9</td>
-												<td>Uso de máscara</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q9" value="sim"></td>
-												<td><input type="radio" name="q9" value="nao"></td>
-												<td><input type="radio" name="q9" value="na"></td>
-									</tr>
-									<tr>
-												<td>10</td>
-												<td>Uso de avental estéril</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q10" value="sim"></td>
-												<td><input type="radio" name="q10" value="nao"></td>
-												<td><input type="radio" name="q10" value="na"></td>
-									</tr>
-									<tr>
-												<td>11</td>
-												<td>Uso de luvas estéreis</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q11" value="sim"></td>
-												<td><input type="radio" name="q11" value="nao"></td>
-												<td><input type="radio" name="q11" value="na"></td>
-									</tr>
-									<tr>
-												<td>12</td>
-												<td>Sequência correta de paramentação</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q12" value="sim"></td>
-												<td><input type="radio" name="q12" value="nao"></td>
-												<td><input type="radio" name="q12" value="na"></td>
-									</tr>
-									<tr>
-												<td>13</td>
-												<td>Retirada segura de EPIs</td>
-												<td>Paramentação</td>
-												<td><input type="radio" name="q13" value="sim"></td>
-												<td><input type="radio" name="q13" value="nao"></td>
-												<td><input type="radio" name="q13" value="na"></td>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">3. Campos e assepsia do campo operatório</td>
-									</tr>
-									<tr>
-												<td>14</td>
-												<td>Campos estéreis utilizados</td>
-												<td>Campos</td>
-												<td><input type="radio" name="q14" value="sim"></td>
-												<td><input type="radio" name="q14" value="nao"></td>
-												<td><input type="radio" name="q14" value="na"></td>
-									</tr>
-									<tr>
-												<td>15</td>
-												<td>Aplicação correta dos campos</td>
-												<td>Campos</td>
-												<td><input type="radio" name="q15" value="sim"></td>
-												<td><input type="radio" name="q15" value="nao"></td>
-												<td><input type="radio" name="q15" value="na"></td>
-									</tr>
-									<tr>
-												<td>16</td>
-												<td>Manutenção do campo estéril</td>
-												<td>Campos</td>
-												<td><input type="radio" name="q16" value="sim"></td>
-												<td><input type="radio" name="q16" value="nao"></td>
-												<td><input type="radio" name="q16" value="na"></td>
-									</tr>
-									<tr>
-												<td>17</td>
-												<td>Substituição de campo contaminado</td>
-												<td>Campos</td>
-												<td><input type="radio" name="q17" value="sim"></td>
-												<td><input type="radio" name="q17" value="nao"></td>
-												<td><input type="radio" name="q17" value="na"></td>
-									</tr>
-									<tr>
-												<td>18</td>
-												<td>Organização da mesa cirúrgica</td>
-												<td>Campos</td>
-												<td><input type="radio" name="q18" value="sim"></td>
-												<td><input type="radio" name="q18" value="nao"></td>
-												<td><input type="radio" name="q18" value="na"></td>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">4. Controle de instrumentais</td>
-									</tr>
-									<tr>
-												<td>19</td>
-												<td>Instrumentais esterilizados</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q19" value="sim"></td>
-												<td><input type="radio" name="q19" value="nao"></td>
-												<td><input type="radio" name="q19" value="na"></td>
-									</tr>
-									<tr>
-												<td>20</td>
-												<td>Integridade da embalagem estéril</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q20" value="sim"></td>
-												<td><input type="radio" name="q20" value="nao"></td>
-												<td><input type="radio" name="q20" value="na"></td>
-									</tr>
-									<tr>
-												<td>21</td>
-												<td>Verificação de indicadores de esterilização</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q21" value="sim"></td>
-												<td><input type="radio" name="q21" value="nao"></td>
-												<td><input type="radio" name="q21" value="na"></td>
-									</tr>
-									<tr>
-												<td>22</td>
-												<td>Manuseio asséptico</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q22" value="sim"></td>
-												<td><input type="radio" name="q22" value="nao"></td>
-												<td><input type="radio" name="q22" value="na"></td>
-									</tr>
-									<tr>
-												<td>23</td>
-												<td>Controle de contaminação cruzada</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q23" value="sim"></td>
-												<td><input type="radio" name="q23" value="nao"></td>
-												<td><input type="radio" name="q23" value="na"></td>
-									</tr>
-									<tr>
-												<td>24</td>
-												<td>Descarte adequado de perfurocortantes</td>
-												<td>Instrumentais</td>
-												<td><input type="radio" name="q24" value="sim"></td>
-												<td><input type="radio" name="q24" value="nao"></td>
-												<td><input type="radio" name="q24" value="na"></td>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">5. Preparo e manipulação de soluções</td>
-									</tr>
-									<tr>
-												<td>25</td>
-												<td>Preparo em condições assépticas</td>
-												<td>Soluções</td>
-												<td><input type="radio" name="q25" value="sim"></td>
-												<td><input type="radio" name="q25" value="nao"></td>
-												<td><input type="radio" name="q25" value="na"></td>
-									</tr>
-									<tr>
-												<td>26</td>
-												<td>Soluções identificadas corretamente</td>
-												<td>Soluções</td>
-												<td><input type="radio" name="q26" value="sim"></td>
-												<td><input type="radio" name="q26" value="nao"></td>
-												<td><input type="radio" name="q26" value="na"></td>
-									</tr>
-									<tr>
-												<td>27</td>
-												<td>Verificação de validade</td>
-												<td>Soluções</td>
-												<td><input type="radio" name="q27" value="sim"></td>
-												<td><input type="radio" name="q27" value="nao"></td>
-												<td><input type="radio" name="q27" value="na"></td>
-									</tr>
-									<tr>
-												<td>28</td>
-												<td>Técnica asséptica na manipulação</td>
-												<td>Soluções</td>
-												<td><input type="radio" name="q28" value="sim"></td>
-												<td><input type="radio" name="q28" value="nao"></td>
-												<td><input type="radio" name="q28" value="na"></td>
-									</tr>
-									
-									<tr class="section">
-												<td colspan="6">6. Segurança do paciente e organização do ambiente</td>
-									</tr>
-									<tr>
-												<td>29</td>
-												<td>Identificação correta do paciente</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q29" value="sim"></td>
-												<td><input type="radio" name="q29" value="nao"></td>
-												<td><input type="radio" name="q29" value="na"></td>
-									</tr>
-									<tr>
-												<td>30</td>
-												<td>Confirmação do procedimento</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q30" value="sim"></td>
-												<td><input type="radio" name="q30" value="nao"></td>
-												<td><input type="radio" name="q30" value="na"></td>
-									</tr>
-									<tr>
-												<td>31</td>
-												<td>Aplicação do checklist de cirurgia segura</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q31" value="sim"></td>
-												<td><input type="radio" name="q31" value="nao"></td>
-												<td><input type="radio" name="q31" value="na"></td>
-									</tr>
-									<tr>
-												<td>32</td>
-												<td>Comunicação efetiva da equipe</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q32" value="sim"></td>
-												<td><input type="radio" name="q32" value="nao"></td>
-												<td><input type="radio" name="q32" value="na"></td>
-									</tr>
-									<tr>
-												<td>33</td>
-												<td>Ambiente limpo e organizado</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q33" value="sim"></td>
-												<td><input type="radio" name="q33" value="nao"></td>
-												<td><input type="radio" name="q33" value="na"></td>
-									</tr>
-									<tr>
-												<td>34</td>
-												<td>Controle de fluxo de pessoas</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q34" value="sim"></td>
-												<td><input type="radio" name="q34" value="nao"></td>
-												<td><input type="radio" name="q34" value="na"></td>
-									</tr>
-									<tr>
-												<td>35</td>
-												<td>Superfícies desinfetadas</td>
-												<td>Segurança</td>
-												<td><input type="radio" name="q35" value="sim"></td>
-												<td><input type="radio" name="q35" value="nao"></td>
-												<td><input type="radio" name="q35" value="na"></td>
-									</tr>
-						
-						</table>
-						
-						<br>
-						
-						<button class="calc" onclick="calcular()">Calcular adesão</button>
-						<button class="export" onclick="exportar()">Exportar Excel</button>
-						<button class="print" onclick="window.print()">Imprimir</button>
-						<button onclick="enviar()" style="background:#6a1b9a;color:white">
-									Enviar para pesquisa
-						</button>
-						
-						<div class="result" id="resultado"></div>
-						
-						<h3>Observações do avaliador</h3>
-						<textarea placeholder="Registrar não conformidades ou eventos observados"></textarea>
-						
-						<canvas id="grafico"></canvas>
-			
-			</div>
-			</form>
+
 </div>
 
 <!-- ================= FORM 2 ================= -->
@@ -979,8 +980,13 @@
 
 </div>
 
+
+<iframe name="hiddenFrame" style="display:none;"></iframe>
+
+<form id="formEnvio" method="POST" target="hiddenFrame" style="display:none;"></form>
+
 <script>
-   function coletarDados(){
+   function coletarDados() {
       console.log("coletarDados");
       const dados = {};
 
@@ -1001,38 +1007,29 @@
    }
 
 
-   function enviar(){
+   function enviar() {
       console.log("enviar2");
       const url = "https://script.google.com/macros/s/AKfycbxctGcXLH4q_-JjgoY4hiWkqPEJOBJQF7CZeafF8fOLWTrsbn4lGsCrIf7XkTqCWGFz/exec";
       const dados = coletarDados();
       const form = document.getElementById("formEnvio");
 
       form.action = url;
+      // limpa tudo
+      form.innerHTML = "";
 
-      // campos fixos
-      form.elements["data"].value = dados.data || "";
-      form.elements["setor"].value = dados.setor || "";
-      form.elements["procedimento"].value = dados.procedimento || "";
-      form.elements["profissional"].value = dados.profissional || "";
-      form.elements["avaliador"].value = dados.avaliador || "";
-
-      // remove q1...q35 antigos
-      form.querySelectorAll('input[data-dinamico="1"]').forEach(el => el.remove());
-
-      // adiciona q1...q35 dinamicamente
-      for (let i = 1; i <= 35; i++) {
+      // cria todos os campos dinamicamente
+      for (let key in dados) {
          const input = document.createElement("input");
          input.type = "hidden";
-         input.name = "q" + i;
-         input.value = dados["q" + i] || "";
-         input.setAttribute("data-dinamico", "1");
+         input.name = key;
+         input.value = dados[key];
          form.appendChild(input);
       }
 
       form.submit();
       alert("Dados enviados com sucesso!");
    }
-   
+
    function mostrar(id) {
       document.querySelectorAll(".page").forEach(p => {
          p.classList.remove("active")
