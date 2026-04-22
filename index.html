@@ -1009,6 +1009,7 @@
       for (let key in dados) {
          formData.append(key, dados[key]);
       }
+      console.log(formData);
       
       fetch(url, {
          method: "POST",
