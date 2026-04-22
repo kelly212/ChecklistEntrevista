@@ -1028,6 +1028,40 @@
 
       form.submit();
       alert("Dados enviados com sucesso!");
+      // limpa interface
+      limparFormulario();
+
+      
+   }
+
+   function limparFormulario(){
+
+      // inputs normais
+      document.querySelectorAll('input[type="text"], input[type="date"]')
+       .forEach(el => el.value = "");
+
+      // radios
+      document.querySelectorAll('input[type="radio"]')
+       .forEach(el => el.checked = false);
+
+      // textarea
+      document.querySelectorAll('textarea')
+       .forEach(el => el.value = "");
+
+      // contenteditable (seu form 2 usa isso)
+      document.querySelectorAll('[contenteditable="true"]')
+       .forEach(el => {
+          el.innerText = "";
+       });
+
+      // resultado
+      const res = document.getElementById("resultado");
+      if(res) res.innerHTML = "";
+
+      // gráfico (chart.js)
+      if (typeof chart !== "undefined" && chart) {
+         chart.destroy();
+      }
    }
 
    function mostrar(id) {
