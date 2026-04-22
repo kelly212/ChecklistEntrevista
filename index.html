@@ -805,7 +805,7 @@
 									<button class="calc" onclick="calcular()">Calcular adesão</button>
 									<button class="export" onclick="exportar()">Exportar Excel</button>
 									<button class="print" onclick="window.print()">Imprimir</button>
-									<button onclick="enviar()" style="background:#6a1b9a;color:white">
+									<button onclick="enviarChecklist()" style="background:#6a1b9a;color:white">
 												Enviar para pesquisa
 									</button>
 									
@@ -975,6 +975,10 @@
 												<div class="assinatura-linha" contenteditable="true"></div>
 									</div>
 						</div>
+						
+						<button onclick="enviarEntrevista()" style="background:#6a1b9a;color:white">
+									Salvar Entrevista
+						</button>
 			
 			</div>
 
@@ -986,6 +990,7 @@
 <form id="formEnvio" method="POST" target="hiddenFrame" style="display:none;"></form>
 
 <script>
+
    function coletarDados() {
       console.log("coletarDados");
       const dados = {};
@@ -1005,11 +1010,54 @@
 
       return dados;
    }
+   function coletarEntrevista(){
+      const dados = {};
 
+      dados.tipo = "entrevista";
 
-   function enviar() {
-      console.log("enviar2");
-      const url = "https://script.google.com/macros/s/AKfycbxctGcXLH4q_-JjgoY4hiWkqPEJOBJQF7CZeafF8fOLWTrsbn4lGsCrIf7XkTqCWGFz/exec";
+      // ===== IDENTIFICAÇÃO =====
+      const linhas = document.querySelectorAll('#form2 .linha');
+
+      dados.codigo = linhas[0]?.innerText.trim() || "";
+      dados.data = linhas[1]?.innerText.trim() || "";
+      dados.horario = linhas[2]?.innerText.trim() || "";
+      dados.local = linhas[3]?.innerText.trim() || "";
+      dados.categoria = linhas[4]?.innerText.trim() || "";
+      dados.tempo_enfermagem = linhas[5]?.innerText.trim() || "";
+      dados.tempo_centro = linhas[6]?.innerText.trim() || "";
+
+      // ===== RESPOSTAS =====
+      const respostas = document.querySelectorAll('#form2 .resposta');
+
+      respostas.forEach((el, i) => {
+         dados["pergunta_" + (i + 1)] = el.innerText.trim();
+      });
+
+      // ===== ASSINATURAS =====
+      const assinaturas = document.querySelectorAll('#form2 .assinatura-linha');
+
+      dados.assinatura_entrevistador = assinaturas[0]?.innerText.trim() || "";
+      dados.assinatura_participante = assinaturas[1]?.innerText.trim() || "";
+
+      return dados;
+   }
+
+   function enviarEntrevista() {
+      const dados = coletarDados();
+      dados.tipo = "entrevista";
+
+      enviarGenerico(dados);
+   }
+   function enviarChecklist(){
+      const dados = coletarDados();
+      dados.tipo = "checklist";
+
+      enviarGenerico(dados);
+   }
+   
+   function enviarGenerico() {
+      console.log("enviarChecklist2");
+      const url = "https://script.google.com/macros/s/AKfycbzmfCwy-_H5EXx7qO4Oe_6-Hdb_9ixAf4EXJOxZ4OIalyvlwnRiJu0ukh2_UyDzfrMT/exec";
       const dados = coletarDados();
       const form = document.getElementById("formEnvio");
 
