@@ -463,7 +463,9 @@
 <!-- ================= FORM 1 ================= -->
 
 <div id="form1" class="page active">
+			<iframe name="destinoOculto" style="display:none;"></iframe>
 			
+			<form id="formEnvio" method="POST" target="destinoOculto" style="display:none;">
 			<div class="container">
 						
 						<h2>Auditoria de Adesão aos Protocolos Operacionais Padrão</h2>
@@ -814,7 +816,7 @@
 						<canvas id="grafico"></canvas>
 			
 			</div>
-
+			</form>
 </div>
 
 <!-- ================= FORM 2 ================= -->
@@ -1001,28 +1003,34 @@
 
    function enviar(){
       console.log("enviar");
-      const url = "https://script.google.com/macros/s/AKfycbwV1kw0Lwbg81JJMqsTGOvCoGmyxSTXfZytTMDVzdFvERS6qVwzPUfIMV8GOXRQHQKn/exec";
-
+      const url = "https://script.google.com/macros/s/AKfycbxctGcXLH4q_-JjgoY4hiWkqPEJOBJQF7CZeafF8fOLWTrsbn4lGsCrIf7XkTqCWGFz/exec";
       const dados = coletarDados();
-      const formData = new FormData();
+      const form = document.getElementById("formEnvio");
 
-      for (let key in dados) {
-         formData.append(key, dados[key]);
+      form.action = url;
+
+      // campos fixos
+      form.elements["data"].value = dados.data || "";
+      form.elements["setor"].value = dados.setor || "";
+      form.elements["procedimento"].value = dados.procedimento || "";
+      form.elements["profissional"].value = dados.profissional || "";
+      form.elements["avaliador"].value = dados.avaliador || "";
+
+      // remove q1...q35 antigos
+      form.querySelectorAll('input[data-dinamico="1"]').forEach(el => el.remove());
+
+      // adiciona q1...q35 dinamicamente
+      for (let i = 1; i <= 35; i++) {
+         const input = document.createElement("input");
+         input.type = "hidden";
+         input.name = "q" + i;
+         input.value = dados["q" + i] || "";
+         input.setAttribute("data-dinamico", "1");
+         form.appendChild(input);
       }
-      console.log(formData);
-      
-      fetch(url, {
-         method: "POST",
-         body: formData
-      })
-       .then(res => res.json())
-       .then(res => {
-          alert("Dados enviados com sucesso!");
-       })
-       .catch(err => {
-          alert("Erro ao enviar");
-          console.error(err);
-       });
+
+      form.submit();
+      alert("Dados enviados com sucesso!");
    }
    
    function mostrar(id) {
